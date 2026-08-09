@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rewards US - Lululemon $750</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #fafafa;
+            color: #222222;
+        }
+
+        .hero {
+            position: relative;
+            height: 380px;
+            overflow: hidden;
+            background: #000000;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #1f0106 0%, #d31334 50%, #000000 100%);
+            filter: blur(8px);
+            transform: scale(1.1);
+            opacity: 0.85;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gift-card {
+            width: 360px;
+            max-width: 85%;
+            height: 215px;
+            padding: 25px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #d31334 0%, #91001a 100%);
+            color: #ffffff;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .gift-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gift-card-chip {
+            width: 42px;
+            height: 30px;
+            border-radius: 6px;
+            background: linear-gradient(135deg, #e8c96a, #c5a03d);
+        }
+
+        .gift-card-label {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        .gift-card-amount {
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .gift-card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gift-card-dots {
+            letter-spacing: 4px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .gift-card-logo-img {
+            height: 30px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            object-fit: contain;
+        }
+
+        .content {
+            max-width: 720px;
+            margin: -35px auto 80px;
+            position: relative;
+            z-index: 3;
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .brand-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .brand-logo-img {
+            max-width: 220px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 0 0 10px;
+            font-size: 30px;
+            font-weight: 800;
+            color: #111111;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #555555;
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0 auto 25px;
+        }
+
+        .disclosure {
+            text-align: center;
+            font-size: 13px;
+            color: #777777;
+            margin: 15px 0;
+            line-height: 1.5;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .step {
+            text-align: center;
+            padding: 22px 12px;
+            background: #fafafa;
+            border: 1px solid #eaeaea;
+            border-radius: 14px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .step:hover {
+            border-color: #d31334;
+            transform: translateY(-2px);
+        }
+
+        .number {
+            width: 38px;
+            height: 38px;
+            line-height: 38px;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            background: #d31334;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .step p {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #222222;
+        }
+
+        .button {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background: #d31334;
+            color: #ffffff;
+            padding: 18px 24px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 8px 20px rgba(211, 19, 52, 0.25);
+        }
+
+        .button:hover {
+            background: #b50e2b;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(211, 19, 52, 0.35);
+        }
+
+        .people {
+            text-align: center;
+            line-height: 2.2;
+            color: #444444;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 30px 0 25px;
+            padding: 15px;
+            background: #f8f8f8;
+            border-radius: 12px;
+        }
+
+        .faq {
+            border-top: 1px solid #eee;
+            padding-top: 30px;
+            margin-top: 30px;
+        }
+
+        .faq h3 {
+            margin: 0 0 15px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #111111;
+        }
+
+        .faq p {
+            color: #555555;
+            line-height: 1.6;
+            font-size: 14px;
+            margin: 0 0 12px;
+        }
+
+        /* CLAIM NOTIFICATION */
+        .claim-notification {
+            position: fixed;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%) translateY(30px);
+            z-index: 99999;
+
+            width: max-content;
+            max-width: calc(100% - 32px);
+
+            background: #111111;
+            color: #ffffff;
+
+            padding: 14px 22px;
+            border-radius: 50px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.4;
+
+            opacity: 0;
+            pointer-events: none;
+
+            transition: opacity 0.35s ease, transform 0.35s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .claim-notification.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .claim-icon {
+            margin-right: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                height: 310px;
+            }
+
+            .gift-card {
+                height: 190px;
+                padding: 20px;
+            }
+
+            .gift-card-amount {
+                font-size: 30px;
+            }
+
+            .content {
+                margin: -25px 16px 60px;
+                padding: 28px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .brand-logo-img {
+                max-width: 170px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .step {
+                padding: 16px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                text-align: left;
+            }
+
+            .number {
+                margin: 0;
+                flex-shrink: 0;
+            }
+
+            .claim-notification {
+                bottom: 12px;
+                font-size: 13px;
+                padding: 12px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HERO BANNER -->
+<div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-text">
+        <div class="gift-card">
+
+            <div class="gift-card-top">
+                <div class="gift-card-chip"></div>
+                <div class="gift-card-label">Gift Card</div>
+            </div>
+
+            <div class="gift-card-amount">
+                Lululemon $750
+            </div>
+
+            <div class="gift-card-bottom">
+                <div class="gift-card-dots">
+                    •••• ••••
+                </div>
+
+                <img 
+                    class="gift-card-logo-img" 
+                    src="https://1000logos.net/wp-content/uploads/2017/08/Lululemon-Logo.png" 
+                    alt="Lululemon Logo"
+                >
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="content">
+
+    <!-- LULULEMON LOGO HEADER -->
+    <div class="brand-header">
+        <img 
+            class="brand-logo-img" 
+            src="https://1000logos.net/wp-content/uploads/2017/08/Lululemon-Logo.png" 
+            alt="Lululemon"
+        >
+    </div>
+
+    <h1>
+        Rewards US - Lululemon $750
+    </h1>
+
+    <p class="subtitle">
+        Complete the quick steps below to participate and unlock your $750 reward opportunity.
+    </p>
+
+    <p class="disclosure">
+        Complete the required partner offers to finish your participation and have your reward eligibility reviewed.
+    </p>
+    <p class="disclosure">
+        👉 Continue below to get started.
+    </p>
+
+    <div class="steps">
+
+        <div class="step">
+            <div class="number">1</div>
+            <p>Click Claim Your Reward</p>
+        </div>
+
+        <div class="step">
+            <div class="number">2</div>
+            <p>Enter Basic Info</p>
+        </div>
+
+        <div class="step">
+            <div class="number">3</div>
+            <p>Complete Partner Offers</p>
+        </div>
+
+    </div>
+
+
+    <a
+        class="button"
+        href="https://trksy.org/aff_c?offer_id=1587&aff_id=179788"
+    >
+        🎁 Claim Your Reward
+    </a>
+
+
+    <div class="people">
+
+        ✅ Thousands of users are joining today<br>
+
+        ⭐ Complete required offers to qualify<br>
+
+        🔒 No upfront payment required
+
+    </div>
+
+
+    <div class="faq">
+
+        <h3>
+            How it works
+        </h3>
+
+        <p>
+            1. Click the button above and enter your basic contact details.
+        </p>
+
+        <p>
+            2. Complete the required promotional offers displayed on the partner portal.
+        </p>
+
+        <p>
+            3. Upon successful verification of completed steps, you will receive instructions to claim your $750 Lululemon reward card.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- CLAIM NOTIFICATION -->
+<div
+    id="claim-notification"
+    class="claim-notification"
+    aria-live="polite"
+>
+    <span class="claim-icon">🎉</span>
+    <span id="claim-message">
+        A participant successfully received the reward! 🥳
+    </span>
+</div>
+
+
+<script>
+
+/*
+ * PARTICIPANT NAMES
+ */
+
+const participants = [
+    "Maggie Brock", "Julio Magana", "Amaris Wilson", "Daniel Anderson", "Ella Schneider",
+    "Raymond Tate", "Skye Rice", "Graham Berry", "Annabelle Camacho", "Tatum McCarthy",
+    "Kira Colon", "Bruce Calhoun", "Thalia Ramos", "Angel Anderson", "Ella Martin",
+    "Mateo Smith", "Olivia Tang", "Rogelio Rice", "Ada Vasquez", "Rowan Perry",
+    "Clara Pennington", "Bobby Dickerson", "Opal Reid", "Josue Sandoval", "Elsie Moody",
+    "Ryland Morales", "Skylar Butler", "Ryder Lee", "Scarlett Bridges", "Mohammed Mays",
+    "Denisse Rice", "Graham Cline", "Lina Garrison", "Noe Bowman", "Fiona Flores",
+    "Lincoln Mullins", "Maliyah Dalton", "Fletcher Coffey", "Paola Hunt", "Jesus Benson",
+    "Collins Espinoza", "Dallas Coffey", "Paola Carroll", "Oscar Parks", "Ainsley Hendricks",
+    "Dash Dickson", "Emmalynn Fernandez", "Bentley Fisher", "Arya Malone", "Ruben Knox"
+];
+
+
+/*
+ * NOTIFICATION
+ */
+
+const notification = document.getElementById("claim-notification");
+const message = document.getElementById("claim-message");
+
+let currentIndex = 0;
+
+function showParticipant() {
+    if (!participants.length) return;
+
+    const name = participants[currentIndex];
+
+    message.textContent = `${name} successfully received their reward! 🥳`;
+    notification.classList.add("show");
+
+    setTimeout(() => {
+        notification.classList.remove("show");
+    }, 4000);
+
+    currentIndex++;
+
+    if (currentIndex >= participants.length) {
+        currentIndex = 0;
+    }
+}
+
+/*
+ * Start after page loads.
+ */
+setTimeout(showParticipant, 2500);
+
+/*
+ * Show another notification every 7 seconds.
+ */
+setInterval(showParticipant, 7000);
+
+</script>
+
+</body>
+</html>
