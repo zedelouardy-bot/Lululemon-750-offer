@@ -1,546 +1,619 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claim Your $750 Costco Gift Card | Shopper Survey Program</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --costco-blue: #0060A9;
+      --costco-blue-hover: #004B85;
+      --costco-red: #E31837;
+      --costco-red-light: #FFF5F5;
+      --costco-red-border: #FEE2E2;
+      --dark-gray: #0F172A;
+      --slate-600: #475569;
+      --slate-500: #64748B;
+      --light-gray: #F8FAFC;
+      --border-color: #E2E8F0;
+      --card-border: #EDF2F7;
+      --success-green: #10B981;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
 
-    <title>Rewards US - Costco $750</title>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+    body {
+      background-color: #F3F4F6;
+      color: var(--dark-gray);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
 
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: #fafafa;
-            color: #222222;
-        }
+    /* Top Announcement Banner */
+    header {
+      background: linear-gradient(90deg, #003B69 0%, var(--costco-blue) 50%, #003B69 100%);
+      color: #FFFFFF;
+      text-align: center;
+      padding: 10px 20px;
+      font-weight: 600;
+      font-size: 0.8125rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
 
-        .hero {
-            position: relative;
-            height: 380px;
-            overflow: hidden;
-            background: #000000;
-        }
+    /* Main Container Structure */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, #002e52 0%, #0060a8 50%, #e31837 100%);
-            filter: blur(8px);
-            transform: scale(1.1);
-            opacity: 0.85;
-        }
+    /* Hero Section */
+    .hero {
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 48px 40px;
+      margin-top: 32px;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--border-color);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.45);
-        }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--costco-red);
+    }
 
-        .hero-text {
-            position: relative;
-            z-index: 2;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--costco-red-light);
+      border: 1px solid var(--costco-red-border);
+      color: var(--costco-red);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: 0.2px;
+    }
 
-        .gift-card {
-            width: 360px;
-            max-width: 85%;
-            height: 215px;
-            padding: 25px;
-            border-radius: 18px;
-            background: linear-gradient(135deg, #0060a8 0%, #003366 100%);
-            color: #ffffff;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
+    .badge span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: var(--costco-red);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(227, 24, 55, 0.2);
+    }
 
-        .gift-card-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1.25;
+      color: #0F172A;
+      margin-bottom: 24px;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+    }
 
-        .gift-card-chip {
-            width: 42px;
-            height: 30px;
-            border-radius: 6px;
-            background: linear-gradient(135deg, #e8c96a, #c5a03d);
-        }
+    h1 span {
+      color: var(--costco-blue);
+      background: linear-gradient(135deg, #0060A9 0%, #003B69 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        .gift-card-label {
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            opacity: 0.9;
-        }
+    /* Brand Logo Presentation */
+    .hero-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 8px 0 24px 0;
+    }
 
-        .gift-card-amount {
-            font-size: 36px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
+    .hero-logo img {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 96, 169, 0.12));
+      transition: transform 0.3s ease;
+    }
 
-        .gift-card-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .hero-logo img:hover {
+      transform: scale(1.03);
+    }
 
-        .gift-card-dots {
-            letter-spacing: 4px;
-            font-size: 14px;
-            opacity: 0.8;
-        }
+    .subtitle {
+      font-size: 1.125rem;
+      color: var(--slate-600);
+      margin-bottom: 28px;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 400;
+    }
 
-        .gift-card-logo-img {
-            height: 0px;
-            width: auto;
-            filter: brightness(0) invert(1);
-            object-fit: contain;
-        }
+    /* Social Proof Bar */
+    .social-proof {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 10px 20px;
+      background: var(--light-gray);
+      border: 1px solid var(--border-color);
+      border-radius: 9999px;
+      margin-bottom: 32px;
+      font-size: 0.875rem;
+      color: var(--slate-600);
+    }
 
-        .content {
-            max-width: 720px;
-            margin: -35px auto 80px;
-            position: relative;
-            z-index: 3;
-            background: #ffffff;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-        }
+    .stars {
+      color: #F59E0B;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
 
-        .brand-header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
+    .verified-icon {
+      color: var(--success-green);
+      font-weight: 700;
+    }
 
-        .brand-logo-img {
-            max-width: 220px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
+    .social-proof span strong {
+      color: var(--dark-gray);
+      font-weight: 600;
+    }
 
-        h1 {
-            text-align: center;
-            margin: 0 0 10px;
-            font-size: 30px;
-            font-weight: 800;
-            color: #111111;
-            letter-spacing: -0.5px;
-        }
+    /* Call to Action Elements */
+    .cta-btn {
+      display: inline-block;
+      width: 100%;
+      max-width: 480px;
+      background: linear-gradient(180deg, #0072C6 0%, var(--costco-blue) 100%);
+      color: white;
+      text-decoration: none;
+      font-size: 1.125rem;
+      font-weight: 700;
+      padding: 18px 32px;
+      border-radius: 12px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 10px 20px -5px rgba(0, 96, 169, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+    }
 
-        .subtitle {
-            text-align: center;
-            color: #555555;
-            font-size: 16px;
-            line-height: 1.6;
-            margin: 0 auto 25px;
-        }
+    .cta-btn:hover {
+      background: linear-gradient(180deg, var(--costco-blue) 0%, var(--costco-blue-hover) 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 24px -4px rgba(0, 96, 169, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
 
-        .disclosure {
-            text-align: center;
-            font-size: 13px;
-            color: #777777;
-            margin: 15px 0;
-            line-height: 1.5;
-        }
+    .cta-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 10px rgba(0, 96, 169, 0.3);
+    }
 
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin: 30px 0;
-        }
+    .no-fees {
+      margin-top: 14px;
+      font-size: 0.8125rem;
+      color: var(--slate-500);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
 
-        .step {
-            text-align: center;
-            padding: 22px 12px;
-            background: #fafafa;
-            border: 1px solid #eaeaea;
-            border-radius: 14px;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
+    /* Section Headers */
+    .section-title {
+      font-size: 1.625rem;
+      margin: 48px 0 24px 0;
+      text-align: center;
+      font-weight: 800;
+      color: var(--dark-gray);
+      letter-spacing: -0.02em;
+    }
 
-        .step:hover {
-            border-color: #0060a8;
-            transform: translateY(-2px);
-        }
+    /* Process Steps Grid */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
 
-        .number {
-            width: 38px;
-            height: 38px;
-            line-height: 38px;
-            margin: 0 auto 12px;
-            border-radius: 50%;
-            background: #0060a8;
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 16px;
-        }
+    .step-card {
+      background: white;
+      padding: 24px 20px;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .step p {
-            margin: 0;
-            font-size: 14px;
-            font-weight: 600;
-            color: #222222;
-        }
+    .step-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: #CBD5E1;
+    }
 
-        .button {
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            background: #e31837;
-            color: #ffffff;
-            padding: 18px 24px;
-            border-radius: 12px;
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: 0.3px;
-            transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 8px 20px rgba(227, 24, 55, 0.25);
-        }
+    .step-number {
+      width: 32px;
+      height: 32px;
+      background: var(--costco-red-light);
+      color: var(--costco-red);
+      border: 1px solid var(--costco-red-border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.875rem;
+      margin-bottom: 16px;
+    }
 
-        .button:hover {
-            background: #c4122d;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 25px rgba(227, 24, 55, 0.35);
-        }
+    .step-card h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: var(--dark-gray);
+      font-weight: 700;
+    }
 
-        .people {
-            text-align: center;
-            line-height: 2.2;
-            color: #444444;
-            font-size: 14px;
-            font-weight: 500;
-            margin: 30px 0 25px;
-            padding: 15px;
-            background: #f8f8f8;
-            border-radius: 12px;
-        }
+    .step-card p {
+      font-size: 0.875rem;
+      color: var(--slate-600);
+      line-height: 1.5;
+    }
 
-        .faq {
-            border-top: 1px solid #eee;
-            padding-top: 30px;
-            margin-top: 30px;
-        }
+    /* FAQ Accordion-Style Card Layout */
+    .faq-container {
+      background: white;
+      border-radius: 16px;
+      padding: 8px 32px;
+      margin-top: 20px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
 
-        .faq h3 {
-            margin: 0 0 15px;
-            font-size: 18px;
-            font-weight: 700;
-            color: #111111;
-        }
+    .faq-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
 
-        .faq p {
-            color: #555555;
-            line-height: 1.6;
-            font-size: 14px;
-            margin: 0 0 12px;
-        }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
 
-        /* CLAIM NOTIFICATION */
-        .claim-notification {
-            position: fixed;
-            left: 50%;
-            bottom: 20px;
-            transform: translateX(-50%) translateY(30px);
-            z-index: 99999;
+    .faq-question {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: var(--dark-gray);
+    }
 
-            width: max-content;
-            max-width: calc(100% - 32px);
+    .faq-answer {
+      font-size: 0.9375rem;
+      color: var(--slate-600);
+      line-height: 1.6;
+    }
 
-            background: #111111;
-            color: #ffffff;
+    /* Animated Live Notification Toast */
+    .toast-notification {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(255, 255, 255, 0.96);
+      padding: 14px 18px;
+      border-radius: 16px;
+      box-shadow: 0 12px 32px -4px rgba(15, 23, 42, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      border-left: 4px solid var(--costco-blue);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      z-index: 1000;
+      max-width: 340px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transform-origin: bottom left;
+      animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      will-change: transform, opacity;
+    }
 
-            padding: 14px 22px;
-            border-radius: 50px;
+    .toast-notification.toast-hide {
+      animation: fadeOutDown 0.4s cubic-bezier(0.7, 0, 0.84, 0) forwards;
+    }
 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    .toast-avatar {
+      width: 40px;
+      height: 40px;
+      background: var(--costco-red-light);
+      border: 1px solid var(--costco-red-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--costco-red);
+      font-size: 0.9375rem;
+      flex-shrink: 0;
+      box-shadow: inset 0 2px 4px rgba(227, 24, 55, 0.06);
+    }
 
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1.4;
+    .toast-content {
+      font-size: 0.8125rem;
+      line-height: 1.4;
+    }
 
-            opacity: 0;
-            pointer-events: none;
+    .toast-name {
+      font-weight: 700;
+      color: var(--dark-gray);
+    }
 
-            transition: opacity 0.35s ease, transform 0.35s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+    .toast-time {
+      font-size: 0.75rem;
+      color: var(--slate-500);
+      margin-top: 2px;
+    }
 
-        .claim-notification.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
+    /* Keyframe Animations */
+    @keyframes slideUpFade {
+      0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.92);
+      }
+      70% {
+        transform: translateY(-2px) scale(1.01);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
 
-        .claim-icon {
-            margin-right: 8px;
-        }
+    @keyframes fadeOutDown {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+      }
+    }
 
-        @media (max-width: 600px) {
-            .hero {
-                height: 310px;
-            }
+    /* Responsive Design Adjustments */
+    @media (max-width: 768px) {
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
-            .gift-card {
-                height: 190px;
-                padding: 20px;
-            }
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 16px;
+      }
 
-            .gift-card-amount {
-                font-size: 30px;
-            }
+      .hero {
+        padding: 32px 20px;
+        margin-top: 16px;
+      }
 
-            .content {
-                margin: -25px 16px 60px;
-                padding: 28px 20px;
-            }
+      h1 {
+        font-size: 1.75rem;
+      }
 
-            h1 {
-                font-size: 24px;
-            }
+      .subtitle {
+        font-size: 1rem;
+      }
 
-            .brand-logo-img {
-                max-width: 170px;
-            }
+      .social-proof {
+        flex-direction: column;
+        gap: 6px;
+        border-radius: 12px;
+        width: 100%;
+        padding: 12px;
+      }
 
-            .steps {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
+      .social-proof span:nth-child(2),
+      .social-proof span:nth-child(4) {
+        display: none;
+      }
 
-            .step {
-                padding: 16px;
-                display: flex;
-                align-items: center;
-                gap: 15px;
-                text-align: left;
-            }
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
 
-            .number {
-                margin: 0;
-                flex-shrink: 0;
-            }
+      .faq-container {
+        padding: 4px 20px;
+      }
 
-            .claim-notification {
-                bottom: 12px;
-                font-size: 13px;
-                padding: 12px 18px;
-            }
-        }
-    </style>
+      .toast-notification {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        max-width: none;
+        transform-origin: bottom center;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- HERO BANNER -->
-<div class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
+  <header>
+    ⚠️ Limited Time Promotional Program — Limited Spots Available
+  </header>
 
-    <div class="hero-text">
-        <div class="gift-card">
+  <div class="container">
+    
+    <!-- Hero Card -->
+    <div class="hero">
+      <div class="badge">
+        <span></span> Official Shopper Feedback Survey
+      </div>
+      
+      <h1>Get Your <span>$750 Costco Gift Card</span> For Sharing Your Feedback</h1>
+      
+      <!-- Direct Web Image Link for Costco Logo -->
+      <div class="hero-logo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1GCYuKTTUZWP8jn-6u6zPwryOi5xvYw9s_kLsBRu2im0YPVy1Igs1los&s=10" alt="Costco Wholesale Logo">
+      </div>
 
-            <div class="gift-card-top">
-                <div class="gift-card-chip"></div>
-                <div class="gift-card-label">Gift Card</div>
-            </div>
+      <p class="subtitle">Costco is rewarding customers for their valuable feedback. Complete the quick process to claim yours today.</p>
 
-            <div class="gift-card-amount">
-                Costco $750
-            </div>
+      <!-- Social Proof -->
+      <div class="social-proof">
+        <span><span class="verified-icon">✓</span> Verified Program</span>
+        <span>|</span>
+        <span>Trusted by <strong>100k+ members</strong></span>
+        <span>|</span>
+        <span class="stars">★★★★★ 4.5/5</span>
+      </div>
 
-            <div class="gift-card-bottom">
-                <div class="gift-card-dots">
-                    •••• ••••
-                </div>
-
-                <img 
-                    class="gift-card-logo-img" 
-                    src="https://e7.pngegg.com/pngimages/92/986/png-clipart-costco-gift-card-money-discounts-and-allowances-gift-miscellaneous-blue-thumbnail.png" 
-                    alt="Costco Logo"
-                >
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
-<div class="content">
-
-    <!-- COSTCO LOGO HEADER -->
-    <div class="brand-header">
-        <img 
-            class="brand-logo-img" 
-            src="https://images.seeklogo.com/logo-png/3/1/costco-wholesale-logo-png_seeklogo-35878.png" 
-            alt="Costco"
-        >
+      <!-- Main Action Button -->
+      <div>
+        <a href="https://trksy.org/aff_c?offer_id=941&aff_id=179788" class="cta-btn" target="_blank" rel="noopener">Claim Your Reward Now</a>
+        <p class="no-fees">🔒 100% Free — No Upfront Fees Required</p>
+      </div>
     </div>
 
-    <h1>
-        Rewards US - Costco $750
-    </h1>
+    <!-- Claim Steps -->
+    <h2 class="section-title">How To Claim Your $750 Reward</h2>
+    <div class="steps-grid" id="claim">
+      
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Click The Button</h3>
+        <p>Click the "Claim Your Reward" button above to initiate your submission session.</p>
+      </div>
 
-    <p class="subtitle">
-        Complete the quick steps below to participate and unlock your $750 reward card.
-    </p>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Enter Basic Info</h3>
+        <p>Provide your primary name and email address so we know where to send your reward.</p>
+      </div>
 
-    <p class="disclosure">
-        Complete the required partner offers to finish your participation and have your reward card.
-    </p>
-    <p class="disclosure">
-        👉 Continue below to get started.
-    </p>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Complete Offers</h3>
+        <p>Complete 3 to 5 featured partner deals/tasks to sponsor your gift card value.</p>
+      </div>
 
-    <div class="steps">
-
-        <div class="step">
-            <div class="number">1</div>
-            <p>Click Claim Your Reward</p>
-        </div>
-
-        <div class="step">
-            <div class="number">2</div>
-            <p>Enter Basic Info</p>
-        </div>
-
-        <div class="step">
-            <div class="number">3</div>
-            <p>Complete Partner Offers</p>
-        </div>
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <h3>Receive $750</h3>
+        <p>Once verified, your digital $750 Costco Gift Card will be delivered directly to your email.</p>
+      </div>
 
     </div>
 
+    <!-- FAQ Section -->
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-container">
+      
+      <div class="faq-item">
+        <div class="faq-question">How long does it take?</div>
+        <div class="faq-answer">Most deals take between 2–5 minutes each. Some may require a short sign-up, app installation, or trial completion to fully verify.</div>
+      </div>
 
-    <a
-        class="button"
-        href="https://trksy.org/aff_c?offer_id=941&aff_id=179788"
-    >
-        🎁 Claim Your Reward
-    </a>
+      <div class="faq-item">
+        <div class="faq-question">What are deals?</div>
+        <div class="faq-answer">Deals are sponsored promotions from brand partners (such as mobile games, subscription services, or free trials) that fund the cost of your $750 reward.</div>
+      </div>
 
+      <div class="faq-item">
+        <div class="faq-question">How many deals do I have to do?</div>
+        <div class="faq-answer">You need to complete a minimum of 3 to 5 partner deals depending on the specific tier required to reach the full $750 threshold.</div>
+      </div>
 
-    <div class="people">
-
-        ✅ Thousands of users are joining today<br>
-
-        ⭐ Complete required offers to qualify<br>
-
-        🔒 No upfront payment required
-
-    </div>
-
-
-    <div class="faq">
-
-        <h3>
-            How it works
-        </h3>
-
-        <p>
-            1. Click the button above and enter your basic contact details.
-        </p>
-
-        <p>
-            2. Complete the required promotional offers displayed on the partner portal.
-        </p>
-
-        <p>
-            3. Upon successful verification of completed steps, you will receive instructions to claim your $750 Costco reward card.
-        </p>
+      <div class="faq-item">
+        <div class="faq-question">When will I receive my reward?</div>
+        <div class="faq-answer">Once your deal completions are verified by our system, your digital gift card code is dispatched via email within 24–48 hours.</div>
+      </div>
 
     </div>
 
-</div>
+  </div>
 
+  <!-- Real-time Claim Toast Notification -->
+  <div class="toast-notification" id="toast">
+    <div class="toast-avatar" id="toast-initial">O</div>
+    <div class="toast-content">
+      <div><span class="toast-name" id="toast-name">Olivia</span> just claimed a</div>
+      <div style="font-weight:700; color: var(--costco-blue);">$750 Costco Coupon</div>
+      <div class="toast-time">1 second ago</div>
+    </div>
+  </div>
 
-<!-- CLAIM NOTIFICATION -->
-<div
-    id="claim-notification"
-    class="claim-notification"
-    aria-live="polite"
->
-    <span class="claim-icon">🎉</span>
-    <span id="claim-message">
-        A participant successfully received the reward! 🥳
-    </span>
-</div>
+  <script>
+    const names = [
+      "Olivia", "Emma", "Charlotte", "Amelia", "Sophia", "Mia", "Isabella", "Ava", "Evelyn", "Luna",
+      "Harper", "Sofia", "Camila", "Eleanor", "Elizabeth", "Violet", "Emily", "Hazel", "Penelope", "Aria",
+      "Chloe", "Layla", "Mila", "Nora", "Abigail", "Ella", "Avery", "Scarlett", "Maya", "Lila",
+      "Grace", "Lily", "Aurora", "Riley", "Zoey", "Isla", "Stella", "Victoria", "Naomi", "Elena",
+      "Willow", "Alice", "Lucy", "Ivy", "Paisley", "Audrey", "Claire", "Sadie", "Genesis", "Kennedy",
+      "Liam", "Noah", "Oliver", "James", "Elijah", "William", "Henry", "Lucas", "Benjamin", "Theodore",
+      "Mateo", "Levi", "Sebastian", "Daniel", "Jack", "Alexander", "Owen", "Asher", "Jackson", "Leo"
+    ];
 
+    const toast = document.getElementById('toast');
+    const toastName = document.getElementById('toast-name');
+    const toastInitial = document.getElementById('toast-initial');
 
-<script>
+    function showRandomNotification() {
+      const randomName = names[Math.floor(Math.random() * names.length)];
+      
+      toastName.textContent = randomName;
+      toastInitial.textContent = randomName.charAt(0);
+      
+      // Reset animation classes for re-triggering
+      toast.classList.remove('toast-hide');
+      toast.style.display = 'flex';
 
-/*
- * PARTICIPANT NAMES
- */
-
-const participants = [
-    "Maggie Brock", "Julio Magana", "Amaris Wilson", "Daniel Anderson", "Ella Schneider",
-    "Raymond Tate", "Skye Rice", "Graham Berry", "Annabelle Camacho", "Tatum McCarthy",
-    "Kira Colon", "Bruce Calhoun", "Thalia Ramos", "Angel Anderson", "Ella Martin",
-    "Mateo Smith", "Olivia Tang", "Rogelio Rice", "Ada Vasquez", "Rowan Perry",
-    "Clara Pennington", "Bobby Dickerson", "Opal Reid", "Josue Sandoval", "Elsie Moody",
-    "Ryland Morales", "Skylar Butler", "Ryder Lee", "Scarlett Bridges", "Mohammed Mays",
-    "Denisse Rice", "Graham Cline", "Lina Garrison", "Noe Bowman", "Fiona Flores",
-    "Lincoln Mullins", "Maliyah Dalton", "Fletcher Coffey", "Paola Hunt", "Jesus Benson",
-    "Collins Espinoza", "Dallas Coffey", "Paola Carroll", "Oscar Parks", "Ainsley Hendricks",
-    "Dash Dickson", "Emmalynn Fernandez", "Bentley Fisher", "Arya Malone", "Ruben Knox"
-];
-
-
-/*
- * NOTIFICATION
- */
-
-const notification = document.getElementById("claim-notification");
-const message = document.getElementById("claim-message");
-
-let currentIndex = 0;
-
-function showParticipant() {
-    if (!participants.length) return;
-
-    const name = participants[currentIndex];
-
-    message.textContent = `${name} successfully received their reward! 🥳`;
-    notification.classList.add("show");
-
-    setTimeout(() => {
-        notification.classList.remove("show");
-    }, 4000);
-
-    currentIndex++;
-
-    if (currentIndex >= participants.length) {
-        currentIndex = 0;
+      // Trigger exit animation before hiding
+      setTimeout(() => {
+        toast.classList.add('toast-hide');
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 400); // Duration of fadeOutDown animation
+      }, 4000);
     }
-}
 
-/*
- * Start after page loads.
- */
-setTimeout(showParticipant, 2500);
-
-/*
- * Show another notification every 7 seconds.
- */
-setInterval(showParticipant, 7000);
-
-</script>
+    toast.style.display = 'none';
+    setTimeout(showRandomNotification, 2000);
+    setInterval(showRandomNotification, 8000);
+  </script>
 
 </body>
 </html>
